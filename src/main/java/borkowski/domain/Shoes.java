@@ -1,5 +1,7 @@
 package borkowski.domain;
 
+import java.util.Objects;
+
 public class Shoes {
     private Long id;
     private Integer size;
@@ -47,5 +49,21 @@ public class Shoes {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Shoes)) return false;
+        Shoes shoes = (Shoes) o;
+        return getId().equals(shoes.getId()) &&
+                getSize().equals(shoes.getSize()) &&
+                getBrand().equals(shoes.getBrand()) &&
+                getColor().equals(shoes.getColor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getSize(), getBrand(), getColor());
     }
 }
