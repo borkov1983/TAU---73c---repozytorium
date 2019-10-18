@@ -80,6 +80,13 @@ public class ShoesStoreImplTest {
     @Test
     public void testForUpdate() {
         //pobrac obiekt zupdatowac i wczytac jescze raz
+        Shoes sh = service.read(expectedShoes.get(3).getId());
+        sh.setBrand("Spalding");
+        sh.setColor("brown");
+        sh.setSize(32);
+        service.update(sh);
+        Shoes changed = service.read(expectedShoes.get(3).getId());
+        assertEquals(sh, changed);
 
     }
 
