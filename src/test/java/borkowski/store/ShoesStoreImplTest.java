@@ -1,5 +1,7 @@
 package borkowski.store;
 import borkowski.domain.Shoes;
+import org.apache.commons.lang3.RandomUtils;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,25 +17,27 @@ import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class ShoesStoreImplTest {
-    private static ShoesStoreImpl service = new ShoesStoreImpl();
+    public ShoesStoreImpl service = new ShoesStoreImpl();
 
-    private static ArrayList<Shoes> expectedShoes = new ArrayList<>();
+    private ArrayList<Shoes> expectedShoes = new ArrayList<>();
 
     @Rule
     public final ExpectedException exception = ExpectedException.none();
 
-    @BeforeClass
-    public static void setUp() {
-        Shoes shoes1 = new Shoes(1L, 42, "Adidas", "black");
-        Shoes shoes2 = new Shoes(2L, 40, "Nike", "black");
-        Shoes shoes3 = new Shoes(3L, 45, "Puma", "black");
-        Shoes shoes4 = new Shoes(4L, 41, "Adidas", "orange");
+    @Before
+    public void setUp() {
+        Shoes shoes1 = new Shoes(RandomUtils.nextLong(), 42, "Adidas", "black");
+        Shoes shoes2 = new Shoes(RandomUtils.nextLong(), 40, "Nike", "black");
+        Shoes shoes3 = new Shoes(RandomUtils.nextLong(), 45, "Puma", "black");
+        Shoes shoes4 = new Shoes(RandomUtils.nextLong(), 41, "Adidas", "orange");
 
+        expectedShoes.clear();
         expectedShoes.add(shoes1);
         expectedShoes.add(shoes2);
         expectedShoes.add(shoes3);
         expectedShoes.add(shoes4);
 
+        service.shoes.clear();
         service.create(shoes1);
         service.create(shoes2);
         service.create(shoes3);
@@ -42,7 +46,7 @@ public class ShoesStoreImplTest {
 
     @Test
     public void testForCreate() {
-        Shoes expectedShoes = new Shoes(2L, 42, "Adidas", "black");
+        Shoes expectedShoes = new Shoes(RandomUtils.nextLong(), 42, "Adidas", "black");
         Shoes actualShoes = service.create(expectedShoes);
 
         assertEquals(expectedShoes, actualShoes);
@@ -51,8 +55,6 @@ public class ShoesStoreImplTest {
     @Test
     public void testForReadAll() {
         List<Shoes> allShoes = service.readAll();
-
-        assertEquals(4, allShoes.size());
 
         assertEquals(expectedShoes.get(0), allShoes.get(0));
         assertEquals(expectedShoes.get(1), allShoes.get(1));
@@ -70,9 +72,26 @@ public class ShoesStoreImplTest {
 
     @Test
     public void testForReadByIdWhenObjectDoesNotExist() {
-        service.read(1000000L);
-
         exception.expect(NoSuchElementException.class);
         exception.expectMessage("In your Database doesn't exist domain in this Id");
+        service.read(1000000L);
+    }
+
+    @Test
+    public void testForUpdate() {
+        //pobrac obiekt zupdatowac i wczytac jescze raz
+
+    }
+
+    @Test
+    public void testForDelete() {
+        //pobrac obiekt usunac i sprawdzic czy jest poprzez czy wywali wyjatek
+    }
+
+    @Test
+    public void testForDeleteWhenIdDoesNotExist() {
+        exception.expect(NoSuchElementException.class);
+        exception.expectMessage("In your Database doesn't exist domain in this Id");
+        service.delete(1000000L);
     }
 }
