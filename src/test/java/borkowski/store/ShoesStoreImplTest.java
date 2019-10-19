@@ -92,7 +92,12 @@ public class ShoesStoreImplTest {
 
     @Test
     public void testForDelete() {
-        //pobrac obiekt usunac i sprawdzic czy jest poprzez czy wywali wyjatek
+        //pobranie, usuniecie i czy wywali wyjatek
+        Shoes taken = service.read(expectedShoes.get(3).getId());
+        service.delete(taken.getId());
+        exception.expect(NoSuchElementException.class);
+        exception.expectMessage("In your Database doesn't exist domain in this Id");
+        service.read(taken.getId());
     }
 
     @Test

@@ -13,8 +13,6 @@ public class ShoesStoreImpl implements ShoesStoreInterface {
                 throw new IllegalArgumentException("In your Database exist domain in this Id");
             }
         }
-//        Optional<Shoes> optionalShoe = domain.stream().filter(shoe -> shoe.getId().equals(createShoes.getId())).findFirst();
-//        optionalShoe..ifPresentOrElse(domain::add, () -> throw new IllegalArgumentException("In your Database exist domain in this Id"));
         shoes.add(createShoes); //Jesli nie to stwórz
         return createShoes;
     }
@@ -35,9 +33,9 @@ public class ShoesStoreImpl implements ShoesStoreInterface {
     }
 
     @Override
-    public Shoes update( Shoes updateShoes){     //UPDATE
-        if(updateShoes.getId().equals(updateShoes.getId())){
-            shoes.set(updateShoes.getId().intValue(), updateShoes);
+    public Shoes update(Shoes updateShoes){     //UPDATE
+        if(shoes.contains(updateShoes)){
+            shoes.set(shoes.indexOf(updateShoes), updateShoes);
             return updateShoes;
         }
         throw new NoSuchElementException("In your Database doesn't exist domain in this Id");
