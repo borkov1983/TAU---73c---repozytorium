@@ -32,12 +32,14 @@ public class ShoesStoreImplTest {
         Shoes shoes4 = new Shoes(RandomUtils.nextLong(), 41, "Adidas", "orange");
 
         expectedShoes.clear();
+
         expectedShoes.add(shoes1);
         expectedShoes.add(shoes2);
         expectedShoes.add(shoes3);
         expectedShoes.add(shoes4);
 
         service.shoes.clear();
+
         service.create(shoes1);
         service.create(shoes2);
         service.create(shoes3);
