@@ -17,7 +17,8 @@ import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class ShoesStoreImplTest {
-    public ShoesStoreImpl service = new ShoesStoreImpl();
+
+    private ShoesStoreImpl service = new ShoesStoreImpl();
 
     private ArrayList<Shoes> expectedShoes = new ArrayList<>();
 
