@@ -24,7 +24,7 @@ public class ShoesStoreImpl implements ShoesStoreInterface {
 
     @Override
     public Shoes read(Long id){      //READ
-        for (Shoes sh: shoes){      //Przejdz po liscie i jak jest to zwroc
+        for (Shoes sh: shoes){
             if(id.equals(sh.getId())){
                 return sh;
             }

@@ -27,10 +27,10 @@ public class ShoesStoreImplTest {
 
     @Before
     public void setUp() {
-        Shoes shoes1 = new Shoes(RandomUtils.nextLong(), 42, "Adidas", "black");
-        Shoes shoes2 = new Shoes(RandomUtils.nextLong(), 40, "Nike", "black");
-        Shoes shoes3 = new Shoes(RandomUtils.nextLong(), 45, "Puma", "black");
-        Shoes shoes4 = new Shoes(RandomUtils.nextLong(), 41, "Adidas", "orange");
+        Shoes shoes1 = new Shoes(1L, 42, "Adidas", "black");//Random być nie może!!!!
+        Shoes shoes2 = new Shoes(2L, 40, "Nike", "black");
+        Shoes shoes3 = new Shoes(3L, 45, "Puma", "black");
+        Shoes shoes4 = new Shoes(4L, 41, "Adidas", "orange");
 
         expectedShoes.clear();
 
@@ -49,7 +49,7 @@ public class ShoesStoreImplTest {
 
     @Test
     public void testForCreate() {
-        Shoes expectedShoes = new Shoes(RandomUtils.nextLong(), 42, "Adidas", "black");
+        Shoes expectedShoes = new Shoes(1L, 42, "Adidas", "black");
         Shoes actualShoes = service.create(expectedShoes);
 
         assertEquals(expectedShoes, actualShoes);
