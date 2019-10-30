@@ -49,7 +49,7 @@ public class ShoesStoreImplTest {
 
     @Test
     public void testForCreate() {
-        Shoes expectedShoes = new Shoes(1L, 42, "Adidas", "black");
+        Shoes expectedShoes = new Shoes(5L, 46, "Adidas", "black");
         Shoes actualShoes = service.create(expectedShoes);
 
         assertEquals(expectedShoes, actualShoes);

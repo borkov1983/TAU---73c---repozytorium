@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class ShoesStoreImpl implements ShoesStoreInterface {
-    public ShoesStoreImpl(){}   //konstr. bezparametrowy
+    public ShoesStoreImpl(){}   //konstr bezparametrowy
 
     @Override
     public Shoes create(Shoes createShoes) throws IllegalArgumentException {   //CREATE
