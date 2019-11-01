@@ -47,9 +47,8 @@ public class ShoesStoreTimeTest {
         assertNotNull(readTime);
     }
 
-    //testy czy readTime jest rowny LocalDate.now()
 
-    @Test
+    @Test   //test dla metody read
     public void testOfReadTimeOnReadMethod(){
         Shoes shoes = new Shoes(100L,35,"Puma","grey");
         service.create(shoes);
@@ -59,14 +58,23 @@ public class ShoesStoreTimeTest {
         long time = 222222;
         assertEquals(service.read(100L).getReadTime(), time);
     }
+    @Test
+    public void testOfReadTimeOnReadAllMethod(){
+        Shoes shoes1 = new Shoes(100L,39,"Puma","grey");
+        Shoes shoes2 = new Shoes(101L,36,"Nike","red");
+        Shoes shoes3 = new Shoes(102L,42,"Adidas","white");
 
-    //testy czy addTime jest rowny LocalDate.now()
+        service.create(shoes1);
+        service.create(shoes2);
+        service.create(shoes3);
+        service.setTime(timeStamp.getTimeNow());
 
-//    @Test
-//    public void testOfAddTimeOnCreateMethod(){
-//        Shoes shoes = new Shoes(100L,35,"Puma","grey");
-//
-//    }
+        long time = 222222;
 
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        assertEquals(service.readAll().get(0).getReadTime(),time);
+        assertEquals(service.readAll().get(1).getReadTime(),time);
+        assertEquals(service.readAll().get(2).getReadTime(),time);
+    }
 }
 
