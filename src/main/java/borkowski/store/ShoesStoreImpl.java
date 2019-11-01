@@ -61,6 +61,7 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
         shoes.remove(shoe);
     }
 
+
     @Override
     public long getTimeNow() {
         return this.time;
@@ -72,6 +73,22 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+
+    //Method for getting times for shoes by id
+
+    public ArrayList<Long> getAllTimesForShoes(Long id){
+        ArrayList<Long> allTime = new ArrayList<Long>();
+        for(Shoes sh: shoes){
+            if(id.equals(sh.getId())){
+                allTime.add(0, sh.getAddTime());
+                allTime.add(1, sh.getReadTime());
+                allTime.add(2, sh.getUpdateTime());
+                return allTime;
+            }
+        }
+        throw new NoSuchFieldError();
     }
 
 }

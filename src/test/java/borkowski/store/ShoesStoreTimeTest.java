@@ -1,6 +1,5 @@
 package borkowski.store;
-import borkowski.domain.TimeStamp;
-import borkowski.store.TimeStampInterface;
+
 import borkowski.domain.Shoes;
 import org.junit.Before;
 import org.junit.Rule;
@@ -9,8 +8,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.when;
 import org.mockito.Mock;
@@ -22,7 +20,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 public class ShoesStoreTimeTest {
 
     private ShoesStoreImpl service = new ShoesStoreImpl();
-   // private ArrayList<Shoes> expectedShoes = new ArrayList<>();
+
     @Rule
     public final ExpectedException exception = ExpectedException.none();
 
@@ -106,7 +104,6 @@ public class ShoesStoreTimeTest {
         listOfTimesMethods.add(2, time);
         ArrayList<Long> listOfTimesForShoes = service.getAllTimesForShoes(106L);
         assertEquals(listOfTimesMethods, listOfTimesForShoes);
-
     }
 
 }
