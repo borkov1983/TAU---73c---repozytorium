@@ -9,8 +9,9 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
     public static ArrayList<Shoes> shoes = new ArrayList<>();
     private long time;
-
-
+    private boolean readTimeEnabled = true;
+    private boolean addTimeEnabled = true;
+    private boolean updateTimeEnabled = true;
 
     public ShoesStoreImpl(){}   //konstr bezparametrowy
 
@@ -21,7 +22,10 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
                 throw new IllegalArgumentException("In your Database exist domain in this Id");
             }
         }
-        createShoes.setAddTime(getTimeNow());
+        if(addTimeEnabled){
+            createShoes.setAddTime(getTimeNow());
+        }
+        //createShoes.setAddTime(getTimeNow());
         shoes.add(createShoes); //Jesli nie to stwórz
         return createShoes;
     }
@@ -91,8 +95,29 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
         throw new NoSuchFieldError();
     }
 
+    public boolean setCreateTimeEnabled() {
+        return this.readTimeEnabled = true;
+    }
 
+    public boolean setCreateTimeDisabled() {
+        return this.readTimeEnabled = false;
+    }
 
+    public boolean setAddTimeEnabled() {
+        return this.addTimeEnabled = true;
+    }
+
+    public boolean setAddTimeDisabled() {
+        return this.addTimeEnabled= false;
+    }
+
+    public boolean setUpdateTimeEnabled() {
+        return this.updateTimeEnabled = true;
+    }
+
+    public boolean setUpdateTimeDisabled() {
+        return this.updateTimeEnabled = false;
+    }
 }
 
 
