@@ -1,4 +1,5 @@
 package borkowski.store;
+import borkowski.domain.TimeStamp;
 import borkowski.store.TimeStampInterface;
 import borkowski.domain.Shoes;
 import org.junit.Before;
@@ -8,6 +9,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.when;
@@ -35,7 +37,7 @@ public class ShoesStoreTimeTest {
     private void assertNotNull(long readTime) {
     }
 
-    @Test   //test dla metody read
+    @Test
     public void testOfReadTimeOnReadMethod(){
         long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn((long)222222);
@@ -87,5 +89,25 @@ public class ShoesStoreTimeTest {
         service.update(expectedShoes);
         assertEquals(time, service.read(105L).getUpdateTime());
     }
+
+    @Test
+    public void testOfAllTimesInformationForReadMethod(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(106L,44,"Nike","white");
+        service.setTime(timeStamp.getTimeNow());
+        service.create(shoes);
+        Shoes expectedShoes = service.read(shoes.getId());
+        expectedShoes.setBrand("Walonki");
+        service.update(expectedShoes);
+        ArrayList<Long> listOfTimesMethods = new ArrayList<>();
+        listOfTimesMethods.add(0, time);
+        listOfTimesMethods.add(1, time);
+        listOfTimesMethods.add(2, time);
+        ArrayList<Long> listOfTimesForShoes = service.getAllTimesForShoes(106L);
+        assertEquals(listOfTimesMethods, listOfTimesForShoes);
+
+    }
+
 }
 
