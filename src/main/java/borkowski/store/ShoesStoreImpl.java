@@ -42,7 +42,10 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public Shoes read(Long id){      //READ
         for (Shoes sh: shoes){
             if(id.equals(sh.getId())){
-                sh.setReadTime(getTimeNow());
+                if(readTimeEnabled){
+                    sh.setReadTime(getTimeNow());
+                }
+                //sh.setReadTime(getTimeNow());
                 return sh;
             }
         }
@@ -53,7 +56,10 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public Shoes update(Shoes updateShoes){     //UPDATE
         if(shoes.contains(updateShoes)){
             shoes.set(shoes.indexOf(updateShoes), updateShoes);
-            updateShoes.setUpdateTime(getTimeNow());
+            if(updateTimeEnabled){
+                updateShoes.setUpdateTime(getTimeNow());
+            }
+            //updateShoes.setUpdateTime(getTimeNow());
             return updateShoes;
         }
         throw new NoSuchElementException("In your Database doesn't exist domain in this Id");
@@ -78,7 +84,6 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public void setTime(long time) {
         this.time = time;
     }
-
 
     //Method for getting times for shoes by id
 
