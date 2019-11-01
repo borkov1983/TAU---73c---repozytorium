@@ -21,6 +21,7 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
                 throw new IllegalArgumentException("In your Database exist domain in this Id");
             }
         }
+        createShoes.setAddTime(getTimeNow());
         shoes.add(createShoes); //Jesli nie to stwórz
         return createShoes;
     }
