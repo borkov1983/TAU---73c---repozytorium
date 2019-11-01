@@ -119,7 +119,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testAddTimeDisabledAndEnabled(){
-        long time = 1234567891;
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes1 = new Shoes(108L,40,"Puma","yellow");
         Shoes shoes2 = new Shoes(109L,44,"Reabok","white");
@@ -132,5 +132,66 @@ public class ShoesStoreTimeTest {
         assertEquals(time, service.read(109L).getAddTime());
     }
 
+    @Test
+    public void testOfReadTimeDisabled(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(109L,44,"Puma","yellow");
+        service.create(shoes);
+        service.setTime(timeStamp.getTimeNow());
+        service.setReadTimeDisabled();
+        service.read(109L);
+        assertEquals(0, service.read(109L).getReadTime());
+    }
+
+    @Test
+    public void testReadTimeDisabledAndEnabled() {
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(110L,44,"Puma","yellow");
+        service.create(shoes);
+        service.setTime(timeStamp.getTimeNow());
+        service.setReadTimeDisabled();
+        service.read(110L);
+        assertEquals(0, service.read(110L).getReadTime());
+        service.setReadTimeEnabled();
+        service.read(110L);
+        assertEquals(time, service.read(110L).getReadTime());
+    }
+
+    @Test
+    public void testOfUpdateTimeDisabled(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(111L,44,"Puma","yellow");
+        service.create(shoes);
+        service.setTime(timeStamp.getTimeNow());
+        service.setUpdateTimeDisabled();
+        Shoes expectedShoes = service.read(shoes.getId());
+        expectedShoes.setBrand("Spalding");
+        expectedShoes.setSize(44);
+        expectedShoes.setColor("brown");
+        service.update(expectedShoes);
+        assertEquals(0,service.read(111L).getUpdateTime());
+    }
+
+    @Test
+    public void testUpdateTimeDisabledAndEnabled(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(112L,44,"Puma","yellow");
+        service.create(shoes);
+        service.setTime(timeStamp.getTimeNow());
+        service.setUpdateTimeDisabled();
+        Shoes expectedShoes = service.read(shoes.getId());
+        expectedShoes.setBrand("Adidas");
+        expectedShoes.setSize(43);
+        expectedShoes.setColor("black");
+        service.update(expectedShoes);
+        assertEquals(0,service.read(112L).getUpdateTime());
+        service.setUpdateTimeEnabled();
+        service.update(expectedShoes);
+        assertEquals(time, service.read(112L).getUpdateTime());
+    }
 }
 

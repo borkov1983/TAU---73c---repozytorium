@@ -95,11 +95,11 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
         throw new NoSuchFieldError();
     }
 
-    public boolean setCreateTimeEnabled() {
+    public boolean setReadTimeEnabled() {
         return this.readTimeEnabled = true;
     }
 
-    public boolean setCreateTimeDisabled() {
+    public boolean setReadTimeDisabled() {
         return this.readTimeEnabled = false;
     }
 
