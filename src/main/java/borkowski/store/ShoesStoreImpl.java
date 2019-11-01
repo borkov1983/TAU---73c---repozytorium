@@ -49,6 +49,7 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public Shoes update(Shoes updateShoes){     //UPDATE
         if(shoes.contains(updateShoes)){
             shoes.set(shoes.indexOf(updateShoes), updateShoes);
+            updateShoes.setUpdateTime(getTimeNow());
             return updateShoes;
         }
         throw new NoSuchElementException("In your Database doesn't exist domain in this Id");
