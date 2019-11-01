@@ -1,9 +1,16 @@
 package borkowski.store;
 import borkowski.domain.Shoes;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-public class ShoesStoreImpl implements ShoesStoreInterface {
+public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
+
+    public static ArrayList<Shoes> shoes = new ArrayList<>();
+    private long time;
+
+
+
     public ShoesStoreImpl(){}   //konstr bezparametrowy
 
     @Override
@@ -46,6 +53,20 @@ public class ShoesStoreImpl implements ShoesStoreInterface {
         Shoes shoe = read(id);
         shoes.remove(shoe);
     }
+
+    @Override
+    public long getTimeNow() {
+        return this.time;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
 }
 
 

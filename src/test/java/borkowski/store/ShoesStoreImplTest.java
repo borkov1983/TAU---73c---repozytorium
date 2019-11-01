@@ -22,6 +22,7 @@ public class ShoesStoreImplTest {
 
     private ArrayList<Shoes> expectedShoes = new ArrayList<>();
 
+
     @Rule
     public final ExpectedException exception = ExpectedException.none();
 

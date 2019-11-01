@@ -2,10 +2,14 @@ package borkowski.domain;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.time.LocalDate;
+
 import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class ShoesTest {
+
     @Test
     public void classImplementationTest(){
         assertNotNull(new Shoes());
@@ -24,4 +28,5 @@ public class ShoesTest {
         assertEquals("Nike", shoes.getBrand());
         assertEquals("niebieski", shoes.getColor());
     }
+
 }

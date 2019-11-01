@@ -1,19 +1,13 @@
 package borkowski.domain;
+import borkowski.store.TimeStampInterface;
 
-import java.time.LocalDate;
+import java.util.Date;
 
-public class TimeStamp {
-    private LocalDate timeStamp;
+public class TimeStamp implements TimeStampInterface {
 
-    public TimeStamp(LocalDate timeStamp) {
-        this.timeStamp = timeStamp;
-    }
+    @Override
 
-    public LocalDate getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(LocalDate timeStamp) {
-        this.timeStamp = timeStamp;
+    public long getTimeNow() {
+        return new Date().getTime();
     }
 }
