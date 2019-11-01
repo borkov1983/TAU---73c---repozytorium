@@ -106,5 +106,31 @@ public class ShoesStoreTimeTest {
         assertEquals(listOfTimesMethods, listOfTimesForShoes);
     }
 
+    @Test
+    public void testOfAddTimeDisabled(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(107L,44,"Nike","white");
+        service.setTime(timeStamp.getTimeNow());
+        service.setAddTimeDisabled();
+        service.create(shoes);
+        assertEquals(0,service.read(107L).getAddTime());
+    }
+
+    @Test
+    public void testAddTimeDisabledAndEnabled(){
+        long time = 1234567891;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes1 = new Shoes(108L,40,"Puma","yellow");
+        Shoes shoes2 = new Shoes(109L,44,"Reabok","white");
+        service.setTime(timeStamp.getTimeNow());
+        service.setAddTimeDisabled();
+        service.create(shoes1);
+        service.setAddTimeEnabled();
+        service.create(shoes2);
+        assertEquals(0, service.read(108L).getAddTime());
+        assertEquals(time, service.read(109L).getAddTime());
+    }
+
 }
 
