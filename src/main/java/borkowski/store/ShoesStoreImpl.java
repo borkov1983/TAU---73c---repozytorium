@@ -1,8 +1,9 @@
 package borkowski.store;
 import borkowski.domain.Shoes;
-import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+
 
 public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
@@ -26,6 +27,9 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
     @Override
     public ArrayList<Shoes> readAll(){  //ReadAll
+        for (Shoes sh:shoes){
+            sh.setReadTime(getTimeNow());
+        }
         return shoes;   //Zwroc wszystkie buty
     }
 
@@ -33,6 +37,7 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public Shoes read(Long id){      //READ
         for (Shoes sh: shoes){
             if(id.equals(sh.getId())){
+                sh.setReadTime(getTimeNow());
                 return sh;
             }
         }
