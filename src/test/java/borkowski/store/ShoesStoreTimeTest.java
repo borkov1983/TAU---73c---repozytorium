@@ -65,7 +65,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfAddTimeOnCreateMethod() {
-        long time = 1234567891;
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(104L,42,"Adidas","white");
         service.setTime(timeStamp.getTimeNow());
@@ -73,5 +73,19 @@ public class ShoesStoreTimeTest {
         assertEquals(time, service.read(104L).getAddTime());
     }
 
+    @Test
+    public void testOfUpdateTimeOnUpdateMethod(){
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn(time);
+        Shoes shoes = new Shoes(105L,42,"Adidas","white");
+        service.create(shoes);
+        service.setTime(timeStamp.getTimeNow());
+        Shoes expectedShoes = service.read(shoes.getId());
+        expectedShoes.setSize(44);
+        expectedShoes.setBrand("Adonis");
+        expectedShoes.setColor("pink");
+        service.update(expectedShoes);
+        assertEquals(time, service.read(105L).getUpdateTime());
+    }
 }
 
