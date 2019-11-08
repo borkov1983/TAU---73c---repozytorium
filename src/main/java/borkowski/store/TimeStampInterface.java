@@ -1,5 +1,7 @@
 package borkowski.store;
 
+import java.time.LocalDate;
+
 public interface TimeStampInterface {
-    long getTimeNow();
+    LocalDate getTimeNow();
 }

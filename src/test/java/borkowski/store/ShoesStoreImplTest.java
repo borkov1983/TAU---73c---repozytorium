@@ -28,10 +28,11 @@ public class ShoesStoreImplTest {
 
     @Before
     public void setUp() {
-        Shoes shoes1 = new Shoes(1L, 42, "Adidas", "black");//Random być nie może!!!!
+        Shoes shoes1 = new Shoes(1L, 42, "Adidas", "black");
         Shoes shoes2 = new Shoes(2L, 40, "Nike", "black");
         Shoes shoes3 = new Shoes(3L, 45, "Puma", "black");
         Shoes shoes4 = new Shoes(4L, 41, "Adidas", "orange");
+
 
         expectedShoes.clear();
 
@@ -39,6 +40,7 @@ public class ShoesStoreImplTest {
         expectedShoes.add(shoes2);
         expectedShoes.add(shoes3);
         expectedShoes.add(shoes4);
+
 
         service.shoes.clear();
 

@@ -1,6 +1,7 @@
 package borkowski.store;
 import borkowski.domain.Shoes;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -8,7 +9,7 @@ import java.util.NoSuchElementException;
 public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
     public static ArrayList<Shoes> shoes = new ArrayList<>();
-    private long time;
+    private LocalDate time;
     private boolean readTimeEnabled = true;
     private boolean addTimeEnabled = true;
     private boolean updateTimeEnabled = true;
@@ -73,22 +74,22 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
 
 
     @Override
-    public long getTimeNow() {
+    public LocalDate getTimeNow() {
         return this.time;
     }
 
-    public long getTime() {
+    public LocalDate getTime() {
         return time;
     }
 
-    public void setTime(long time) {
+    public void setTime(LocalDate time) {
         this.time = time;
     }
 
     //Method for getting times for shoes by id
 
-    public ArrayList<Long> getAllTimesForShoes(Long id){
-        ArrayList<Long> allTime = new ArrayList<Long>();
+    public ArrayList<LocalDate> getAllTimesForShoes(Long id){
+        ArrayList<LocalDate> allTime = new ArrayList<LocalDate>();
         for(Shoes sh: shoes){
             if(id.equals(sh.getId())){
                 allTime.add(0, sh.getAddTime());

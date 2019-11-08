@@ -1,4 +1,5 @@
 package borkowski.domain;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Shoes {
@@ -6,9 +7,9 @@ public class Shoes {
     private Integer size;
     private String brand;
     private String color;
-    private long addTime;
-    private long updateTime;
-    private long readTime;
+    private LocalDate addTime;
+    private LocalDate updateTime;
+    private LocalDate readTime;
 
 
     public Shoes() {
@@ -21,7 +22,7 @@ public class Shoes {
         this.color = color;
     }
 
-    public Shoes(Long id, Integer size, String brand, String color, long addTime, long updateTime, long readTime) {
+    public Shoes(Long id, Integer size, String brand, String color, LocalDate addTime, LocalDate updateTime, LocalDate readTime) {
         this.id = id;
         this.size = size;
         this.brand = brand;
@@ -63,27 +64,27 @@ public class Shoes {
         this.color = color;
     }
 
-    public long getAddTime() {
+    public LocalDate getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(long addTime) {
+    public void setAddTime(LocalDate addTime) {
         this.addTime = addTime;
     }
 
-    public long getUpdateTime() {
+    public LocalDate getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(long updateTime) {
+    public void setUpdateTime(LocalDate updateTime) {
         this.updateTime = updateTime;
     }
 
-    public long getReadTime() {
+    public LocalDate getReadTime() {
         return readTime;
     }
 
-    public void setReadTime(long readTime) {
+    public void setReadTime(LocalDate readTime) {
         this.readTime = readTime;
     }
 
