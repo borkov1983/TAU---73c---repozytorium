@@ -2,7 +2,7 @@
 # Tags: optional
     
 Feature: Is Shoes are red ?
-  Customer wants to know what color is it
+  Customer wants to know what color is shoes?
 
   Scenario Outline: It is red or not
     Given this is "<color>"

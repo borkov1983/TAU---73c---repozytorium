@@ -23,6 +23,7 @@ public class StepIsItAdidas {
 
     @Given("Client decided to look at the shoes")
     public void client_decided_to_look_at_the_shoes() {
+
         listOfShoes = ShoesStoreImpl.shoes;
         Collections.addAll(listOfShoes,
                 new Shoes(5L, 43, "Adidas", "orange"),

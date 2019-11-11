@@ -124,6 +124,13 @@ public class ShoesStoreImpl implements ShoesStoreInterface, TimeStampInterface {
     public boolean setUpdateTimeDisabled() {
         return this.updateTimeEnabled = false;
     }
+
+    //@Override
+    public int delete(Shoes sh) {
+        long id = sh.getId();
+        shoes.remove(sh);
+        return (int) id;
+    }
 }
 
 
