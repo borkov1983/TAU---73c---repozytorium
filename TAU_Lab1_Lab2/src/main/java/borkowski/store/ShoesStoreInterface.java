@@ -2,7 +2,6 @@ package borkowski.store;
 
 import borkowski.domain.Shoes;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface ShoesStoreInterface {
@@ -17,5 +16,5 @@ public interface ShoesStoreInterface {
 
     public void delete(Long id);
 
-    public LocalDate getTimeNow();
+    public long getTimeNow();
 }

@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
@@ -38,8 +37,8 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfReadTimeOnReadMethod(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
-        when(timeStamp.getTimeNow()).thenReturn(time);
+        long time = 222222;
+        when(timeStamp.getTimeNow()).thenReturn((long)222222);
         Shoes shoes = new Shoes(100L,35,"Puma","grey");
         service.create(shoes);
         service.setTime(timeStamp.getTimeNow());
@@ -48,7 +47,7 @@ public class ShoesStoreTimeTest {
     }
     @Test
     public void testOfReadTimeOnReadAllMethod(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes1 = new Shoes(101L,39,"Puma","grey");
         Shoes shoes2 = new Shoes(102L,36,"Nike","red");
@@ -66,7 +65,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfAddTimeOnCreateMethod() {
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(104L,42,"Adidas","white");
         service.setTime(timeStamp.getTimeNow());
@@ -76,7 +75,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfUpdateTimeOnUpdateMethod(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(105L,42,"Adidas","white");
         service.create(shoes);
@@ -91,7 +90,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfAllTimesInformationForReadMethod(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(106L,44,"Nike","white");
         service.setTime(timeStamp.getTimeNow());
@@ -99,28 +98,28 @@ public class ShoesStoreTimeTest {
         Shoes expectedShoes = service.read(shoes.getId());
         expectedShoes.setBrand("Walonki");
         service.update(expectedShoes);
-        ArrayList<LocalDate> listOfTimesMethods = new ArrayList<>();
+        ArrayList<Long> listOfTimesMethods = new ArrayList<>();
         listOfTimesMethods.add(0, time);
         listOfTimesMethods.add(1, time);
         listOfTimesMethods.add(2, time);
-        ArrayList<LocalDate> listOfTimesForShoes = service.getAllTimesForShoes(106L);
+        ArrayList<Long> listOfTimesForShoes = service.getAllTimesForShoes(106L);
         assertEquals(listOfTimesMethods, listOfTimesForShoes);
     }
 
     @Test
     public void testOfAddTimeDisabled(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(107L,44,"Nike","white");
         service.setTime(timeStamp.getTimeNow());
         service.setAddTimeDisabled();
         service.create(shoes);
-        assertEquals(null,service.read(107L).getAddTime());//mozna zamienic na AssertNull
+        assertEquals(0,service.read(107L).getAddTime());
     }
 
     @Test
     public void testAddTimeDisabledAndEnabled(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes1 = new Shoes(108L,40,"Puma","yellow");
         Shoes shoes2 = new Shoes(109L,44,"Reabok","white");
@@ -129,32 +128,32 @@ public class ShoesStoreTimeTest {
         service.create(shoes1);
         service.setAddTimeEnabled();
         service.create(shoes2);
-        assertEquals(null, service.read(108L).getAddTime());//mozna zamienic na AssertNull
+        assertEquals(0, service.read(108L).getAddTime());
         assertEquals(time, service.read(109L).getAddTime());
     }
 
     @Test
     public void testOfReadTimeDisabled(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(110L,44,"Puma","yellow");
         service.create(shoes);
         service.setTime(timeStamp.getTimeNow());
         service.setReadTimeDisabled();
         service.read(110L);
-        assertEquals(null, service.read(110L).getReadTime());//mozna zamienic na AssertNull
+        assertEquals(0, service.read(110L).getReadTime());
     }
 
     @Test
     public void testReadTimeDisabledAndEnabled() {
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(111L,44,"Puma","yellow");
         service.create(shoes);
         service.setTime(timeStamp.getTimeNow());
         service.setReadTimeDisabled();
         service.read(111L);
-        assertEquals(null, service.read(111L).getReadTime());
+        assertEquals(0, service.read(111L).getReadTime());
         service.setReadTimeEnabled();
         service.read(111L);
         assertEquals(time, service.read(111L).getReadTime());
@@ -162,7 +161,7 @@ public class ShoesStoreTimeTest {
 
     @Test
     public void testOfUpdateTimeDisabled(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(112L,44,"Puma","yellow");
         service.create(shoes);
@@ -173,12 +172,12 @@ public class ShoesStoreTimeTest {
         expectedShoes.setSize(44);
         expectedShoes.setColor("brown");
         service.update(expectedShoes);
-        assertEquals(null,service.read(112L).getUpdateTime());
+        assertEquals(0,service.read(112L).getUpdateTime());
     }
 
     @Test
     public void testUpdateTimeDisabledAndEnabled(){
-        LocalDate time = LocalDate.of(2019, 11, 01);
+        long time = 222222;
         when(timeStamp.getTimeNow()).thenReturn(time);
         Shoes shoes = new Shoes(113L,44,"Puma","yellow");
         service.create(shoes);
@@ -189,7 +188,7 @@ public class ShoesStoreTimeTest {
         expectedShoes.setSize(43);
         expectedShoes.setColor("black");
         service.update(expectedShoes);
-        assertEquals(null,service.read(113L).getUpdateTime());
+        assertEquals(0,service.read(113L).getUpdateTime());
         service.setUpdateTimeEnabled();
         service.update(expectedShoes);
         assertEquals(time, service.read(113L).getUpdateTime());
