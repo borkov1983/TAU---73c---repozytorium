@@ -11,20 +11,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StepIsItAdidas {
-    private Shoes shoes;
+
+    ShoesStoreImpl shoes;
     private String choosenBrand;
     private Integer choosenSize;
 
-    private ShoesStoreImpl service = new ShoesStoreImpl();  //Baza główna butów
     private List<Shoes> listOfShoes = new ArrayList<>();    //Baza pomocnicza butów
 
     @Given("Client decided to look at the shoes")
     public void client_decided_to_look_at_the_shoes() {
-
-        listOfShoes = ShoesStoreImpl.shoes;
+        shoes = new ShoesStoreImpl();
+        ShoesStoreImpl.shoes = new ArrayList<>();
         Collections.addAll(listOfShoes,
                 new Shoes(5L, 43, "Adidas", "orange"),
                 new Shoes(6L, 41, "Adidas", "black"),
