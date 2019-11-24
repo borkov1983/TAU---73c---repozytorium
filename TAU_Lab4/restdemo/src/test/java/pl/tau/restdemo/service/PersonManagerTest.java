@@ -22,6 +22,7 @@ public class PersonManagerTest {
 	@Before
 	public void setup() throws SQLException {
 		personManager = new PersonManagerImpl();
+
 	}
 
 	@After

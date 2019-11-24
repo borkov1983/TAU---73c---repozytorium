@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Simple web api demo -- try implementning post method
- * 
+ *
  * Created by tp on 24.04.17.
  */
 @RestController
@@ -47,9 +47,9 @@ public class PersonApi {
     }
 
     @RequestMapping(value = "/person",
-        method = RequestMethod.POST,
-        consumes = MediaType.APPLICATION_JSON_VALUE,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public Person addPerson(@RequestBody Person p) {
         if (personManager.addPerson(p) < 1) return null;
         return p;
@@ -61,10 +61,21 @@ public class PersonApi {
         return new Long(personManager.deletePerson(personManager.getPerson(id)));
     }
 
+//
+
     @RequestMapping(value = "/persons", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteAllPersons() throws SQLException {
         personManager.deleteAll();
+    }
+
+    @RequestMapping(value = "/person",
+            method = RequestMethod.PUT,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Person updatePerson(@RequestBody Person a) throws SQLException {
+        if (personManager.updatePerson(a) < 1) return null;
+        return a;
     }
 
 }
