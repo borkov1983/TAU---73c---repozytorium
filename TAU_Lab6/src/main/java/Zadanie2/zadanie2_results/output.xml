@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200104 22:24:18.280" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\PJATK\ROK_4\Testowanie_Aut\Cwiczenia\TAU_Lab6\src\main\java\Zadanie2\Shape.robot" id="s1" name="Shape">
+<test id="s1-t1" name="Should return a triangle when all sides are equal">
+<kw name="Run Java Class With Args" library="Shape_resource">
+<arguments>
+<arg>${mainClass}</arg>
+<arg>3 2 3 4</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>java -cp ${path} ${class_name} ${args}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20200104 22:24:18.317" level="INFO">Running command 'java -cp D://PJATK//ROK_4//Testowanie_Aut//Cwiczenia//TAU_Lab6//target//classes// Zadanie2.Shape 3 2 3 4 2&gt;&amp;1'.</msg>
+<msg timestamp="20200104 22:24:18.465" level="INFO">${output} =  3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Sca...</msg>
+<status status="PASS" endtime="20200104 22:24:18.465" starttime="20200104 22:24:18.317"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>WARN</arg>
+</arguments>
+<msg timestamp="20200104 22:24:18.465" level="WARN"> 3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at Zadanie2.Shape.printFunction(Shape.java:46)
+	at Zadanie2.Shape.main(Shape.java:83)</msg>
+<status status="PASS" endtime="20200104 22:24:18.480" starttime="20200104 22:24:18.465"></status>
+</kw>
+<msg timestamp="20200104 22:24:18.480" level="INFO">${result} =  3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Sca...</msg>
+<status status="PASS" endtime="20200104 22:24:18.480" starttime="20200104 22:24:18.317"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>równoramienny</arg>
+</arguments>
+<msg timestamp="20200104 22:24:18.480" level="FAIL"> 3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at Zadanie2.Shape.printFunction(Shape.java:46)
+	at Zadanie2.Shape.main(Shape.java:83) != równoramienny</msg>
+<status status="FAIL" endtime="20200104 22:24:18.480" starttime="20200104 22:24:18.480"></status>
+</kw>
+<status status="FAIL" endtime="20200104 22:24:18.480" critical="yes" starttime="20200104 22:24:18.317"> 3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at Zadanie2.Shape.printFunction(Shape.java:46)
+	at Zadanie2.Shape.main(Shape.java:83) != równoramienny</status>
+</test>
+<doc>Testing if program is correct</doc>
+<status status="FAIL" endtime="20200104 22:24:18.480" starttime="20200104 22:24:18.280"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Shape" pass="0">Shape</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200104 22:24:18.465" level="WARN"> 3 - trˇjk╣ty 
+ 4 - wielobok
+ Ile bokˇw sprawdzamy? : Exception in thread "main" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:937)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at Zadanie2.Shape.printFunction(Shape.java:46)
+	at Zadanie2.Shape.main(Shape.java:83)</msg>
+</errors>
+</robot>

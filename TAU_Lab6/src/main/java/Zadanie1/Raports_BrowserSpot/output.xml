@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200104 22:28:15.635" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\PJATK\ROK_4\Testowanie_Aut\Cwiczenia\TAU_Lab6\src\main\java\Zadanie1\BrowserSpot.robot" id="s1" name="BrowserSpot">
+<test id="s1-t1" name="Get Url">
+<kw name="Open main page" library="BrowserSpot_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:16.591" level="INFO">Opening browser 'Chrome' to base url 'https://app.browserspot.com/login'.</msg>
+<status status="PASS" endtime="20200104 22:28:23.557" starttime="20200104 22:28:16.591"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>BrowserSpot</arg>
+</arguments>
+<msg timestamp="20200104 22:28:23.583" level="INFO">Page title is 'BrowserSpot'.</msg>
+<status status="PASS" endtime="20200104 22:28:23.584" starttime="20200104 22:28:23.557"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:23.584" starttime="20200104 22:28:16.591"></status>
+</kw>
+<kw name="Click Sign Up" library="BrowserSpot_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //button[text()='Sign up']</arg>
+</arguments>
+<msg timestamp="20200104 22:28:23.586" level="INFO">Clicking element 'xpath = //button[text()='Sign up']'.</msg>
+<status status="PASS" endtime="20200104 22:28:23.809" starttime="20200104 22:28:23.584"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:23.809" starttime="20200104 22:28:23.584"></status>
+</kw>
+<kw name="Registartion Page Should be open" library="BrowserSpot_resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:23.927" level="INFO">Current location is 'https://app.browserspot.com/registration'.</msg>
+<status status="PASS" endtime="20200104 22:28:23.928" starttime="20200104 22:28:23.810"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:23.928" starttime="20200104 22:28:23.810"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:28:26.105" starttime="20200104 22:28:23.928"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:26.105" critical="yes" starttime="20200104 22:28:16.591"></status>
+</test>
+<test id="s1-t2" name="Valid Registration">
+<kw name="Open main page" library="BrowserSpot_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:26.127" level="INFO">Opening browser 'Chrome' to base url 'https://app.browserspot.com/login'.</msg>
+<status status="PASS" endtime="20200104 22:28:32.275" starttime="20200104 22:28:26.121"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>BrowserSpot</arg>
+</arguments>
+<msg timestamp="20200104 22:28:32.283" level="INFO">Page title is 'BrowserSpot'.</msg>
+<status status="PASS" endtime="20200104 22:28:32.283" starttime="20200104 22:28:32.275"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:32.283" starttime="20200104 22:28:26.121"></status>
+</kw>
+<kw name="Click Sign Up" library="BrowserSpot_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //button[text()='Sign up']</arg>
+</arguments>
+<msg timestamp="20200104 22:28:32.284" level="INFO">Clicking element 'xpath = //button[text()='Sign up']'.</msg>
+<status status="PASS" endtime="20200104 22:28:32.464" starttime="20200104 22:28:32.284"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:32.464" starttime="20200104 22:28:32.284"></status>
+</kw>
+<kw name="Input FirstName" library="BrowserSpot_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css = input[name=\"firstname\"]</arg>
+<arg>${FIRSTNAME}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:32.468" level="INFO">Typing text 'Michal' into text field 'css = input[name="firstname"]'.</msg>
+<status status="PASS" endtime="20200104 22:28:32.773" starttime="20200104 22:28:32.467"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:32.773" starttime="20200104 22:28:32.466"></status>
+</kw>
+<kw name="Input LastName" library="BrowserSpot_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css = input[name=\"lastname\"]</arg>
+<arg>${LASTNAME}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:32.774" level="INFO">Typing text 'Bor' into text field 'css = input[name="lastname"]'.</msg>
+<status status="PASS" endtime="20200104 22:28:32.920" starttime="20200104 22:28:32.774"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:32.920" starttime="20200104 22:28:32.774"></status>
+</kw>
+<kw name="Input Email" library="BrowserSpot_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css = input[name=\"email\"]</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:32.922" level="INFO">Typing text 'bor@wp16.pl' into text field 'css = input[name="email"]'.</msg>
+<status status="PASS" endtime="20200104 22:28:33.134" starttime="20200104 22:28:32.921"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:33.134" starttime="20200104 22:28:32.921"></status>
+</kw>
+<kw name="Input Password" library="BrowserSpot_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //input[@name=\"password\"]</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:33.136" level="INFO">Typing text 'haslo12!' into text field 'xpath = //input[@name="password"]'.</msg>
+<status status="PASS" endtime="20200104 22:28:33.325" starttime="20200104 22:28:33.135"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:33.325" starttime="20200104 22:28:33.135"></status>
+</kw>
+<kw name="Input ConfirmPassword" library="BrowserSpot_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //input[@name=\"password_confirmation\"]</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:33.327" level="INFO">Typing text 'haslo12!' into text field 'xpath = //input[@name="password_confirmation"]'.</msg>
+<status status="PASS" endtime="20200104 22:28:33.517" starttime="20200104 22:28:33.326"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:33.518" starttime="20200104 22:28:33.326"></status>
+</kw>
+<kw name="Select ApplicationLanguage" library="BrowserSpot_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css = .fake-input</arg>
+</arguments>
+<msg timestamp="20200104 22:28:33.521" level="INFO">Clicking element 'css = .fake-input'.</msg>
+<status status="PASS" endtime="20200104 22:28:33.627" starttime="20200104 22:28:33.519"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css = div.active &gt; div:nth-child(1) &gt; span:nth-child(2)</arg>
+</arguments>
+<msg timestamp="20200104 22:28:33.628" level="INFO">Clicking element 'css = div.active &gt; div:nth-child(1) &gt; span:nth-child(2)'.</msg>
+<status status="PASS" endtime="20200104 22:28:33.759" starttime="20200104 22:28:33.627"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:33.759" starttime="20200104 22:28:33.518"></status>
+</kw>
+<kw name="Select Checkbox" library="BrowserSpot_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css = .checkbox &gt; span:nth-child(2)</arg>
+</arguments>
+<msg timestamp="20200104 22:28:33.762" level="INFO">Clicking element 'css = .checkbox &gt; span:nth-child(2)'.</msg>
+<status status="PASS" endtime="20200104 22:28:34.052" starttime="20200104 22:28:33.761"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:34.052" starttime="20200104 22:28:33.760"></status>
+</kw>
+<kw name="Register Button" library="BrowserSpot_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //button[text()='Sign up']</arg>
+</arguments>
+<msg timestamp="20200104 22:28:34.054" level="INFO">Clicking button 'xpath = //button[text()='Sign up']'.</msg>
+<status status="PASS" endtime="20200104 22:28:34.154" starttime="20200104 22:28:34.054"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:34.154" starttime="20200104 22:28:34.053"></status>
+</kw>
+<kw name="Assert Statement" library="BrowserSpot_resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css = .confirm-registration &gt; h2:nth-child(1)</arg>
+<arg>timeout=10 s</arg>
+</arguments>
+<status status="PASS" endtime="20200104 22:28:39.873" starttime="20200104 22:28:34.155"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>css = .confirm-registration &gt; p:nth-child(2)</arg>
+<arg>@{REGISTER TEXT}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:40.020" level="INFO">Element 'css = .confirm-registration &gt; p:nth-child(2)' contains text 'Please check your email and confirm your registration'.</msg>
+<status status="PASS" endtime="20200104 22:28:40.020" starttime="20200104 22:28:39.873"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:40.020" starttime="20200104 22:28:34.155"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:28:42.256" starttime="20200104 22:28:40.020"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:42.256" critical="yes" starttime="20200104 22:28:26.121"></status>
+</test>
+<test id="s1-t3" name="Invalid Login">
+<kw name="Open main page" library="BrowserSpot_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:42.271" level="INFO">Opening browser 'Chrome' to base url 'https://app.browserspot.com/login'.</msg>
+<status status="PASS" endtime="20200104 22:28:48.344" starttime="20200104 22:28:42.271"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>BrowserSpot</arg>
+</arguments>
+<msg timestamp="20200104 22:28:48.352" level="INFO">Page title is 'BrowserSpot'.</msg>
+<status status="PASS" endtime="20200104 22:28:48.352" starttime="20200104 22:28:48.345"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:48.352" starttime="20200104 22:28:42.271"></status>
+</kw>
+<kw name="Input Login Username" library="BrowserSpot_resource">
+<arguments>
+<arg>${INVALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = /html/body/div/section/div/div[2]/div[1]/form/div[1]/input</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:48.353" level="INFO">Typing text 'failermail@wp.pl' into text field 'xpath = /html/body/div/section/div/div[2]/div[1]/form/div[1]/input'.</msg>
+<status status="PASS" endtime="20200104 22:28:48.584" starttime="20200104 22:28:48.353"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:48.584" starttime="20200104 22:28:48.353"></status>
+</kw>
+<kw name="Input Login Password" library="BrowserSpot_resource">
+<arguments>
+<arg>${INVALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css = div.input-wrapper:nth-child(2) &gt; input:nth-child(2)</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:48.585" level="INFO">Typing text 'failerpassword' into text field 'css = div.input-wrapper:nth-child(2) &gt; input:nth-child(2)'.</msg>
+<status status="PASS" endtime="20200104 22:28:48.785" starttime="20200104 22:28:48.585"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:48.785" starttime="20200104 22:28:48.584"></status>
+</kw>
+<kw name="Login Button" library="BrowserSpot_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css = .form-wrapper &gt; form:nth-child(2) &gt; div:nth-child(3) &gt; button:nth-child(1)</arg>
+</arguments>
+<msg timestamp="20200104 22:28:48.786" level="INFO">Clicking button 'css = .form-wrapper &gt; form:nth-child(2) &gt; div:nth-child(3) &gt; button:nth-child(1)'.</msg>
+<status status="PASS" endtime="20200104 22:28:48.888" starttime="20200104 22:28:48.786"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:48.888" starttime="20200104 22:28:48.785"></status>
+</kw>
+<kw name="Alert Text Should Be Open" library="BrowserSpot_resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css = div.app-alert:nth-child(1) &gt; div:nth-child(1)</arg>
+<arg>timeout=10 s</arg>
+</arguments>
+<status status="PASS" endtime="20200104 22:28:49.123" starttime="20200104 22:28:48.889"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>css = div.app-alert:nth-child(1)</arg>
+<arg>@{LOGIN TEXT}</arg>
+</arguments>
+<msg timestamp="20200104 22:28:49.174" level="INFO">Element 'css = div.app-alert:nth-child(1)' contains text 'Problem while login. Check data.'.</msg>
+<status status="PASS" endtime="20200104 22:28:49.174" starttime="20200104 22:28:49.123"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:49.174" starttime="20200104 22:28:48.888"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:28:51.601" starttime="20200104 22:28:49.175"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:28:51.601" critical="yes" starttime="20200104 22:28:42.256"></status>
+</test>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="PASS" endtime="20200104 22:28:51.616" starttime="20200104 22:28:15.642"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="BrowserSpot" pass="3">BrowserSpot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

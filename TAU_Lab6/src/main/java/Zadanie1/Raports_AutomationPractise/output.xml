@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200104 22:31:26.865" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\PJATK\ROK_4\Testowanie_Aut\Cwiczenia\TAU_Lab6\src\main\java\Zadanie1\AutomationPractise.robot" id="s1" name="AutomationPractise">
+<test id="s1-t1" name="Navigation">
+<kw name="Open Browser To Main Page" library="AutomationPractise_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${MAIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:31:27.096" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20200104 22:31:36.852" starttime="20200104 22:31:27.096"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:31:36.860" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20200104 22:31:36.861" starttime="20200104 22:31:36.853"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:36.861" starttime="20200104 22:31:27.096"></status>
+</kw>
+<kw name="Go To T-shirts Page" library="AutomationPractise_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css = .sf-menu &gt; li:nth-child(3) &gt; a:nth-child(1)</arg>
+</arguments>
+<msg timestamp="20200104 22:31:36.862" level="INFO">Clicking element 'css = .sf-menu &gt; li:nth-child(3) &gt; a:nth-child(1)'.</msg>
+<status status="PASS" endtime="20200104 22:31:37.705" starttime="20200104 22:31:36.862"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:37.705" starttime="20200104 22:31:36.861"></status>
+</kw>
+<kw name="T-shirts Page Should Be Open" library="AutomationPractise_resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${T-SHIRTS URL}</arg>
+</arguments>
+<msg timestamp="20200104 22:31:37.741" level="INFO">Current location is 'http://automationpractice.com/index.php?id_category=5&amp;controller=category'.</msg>
+<status status="PASS" endtime="20200104 22:31:37.741" starttime="20200104 22:31:37.706"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:37.741" starttime="20200104 22:31:37.706"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:31:39.929" starttime="20200104 22:31:37.742"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:39.929" critical="yes" starttime="20200104 22:31:27.096"></status>
+</test>
+<test id="s1-t2" name="Valid Registration">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20200104 22:31:39.929" starttime="20200104 22:31:39.929"></status>
+</kw>
+<kw name="Open Browser To Main Page" library="AutomationPractise_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${MAIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:31:39.929" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20200104 22:31:50.773" starttime="20200104 22:31:39.929"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:31:51.805" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20200104 22:31:51.805" starttime="20200104 22:31:50.773"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:51.805" starttime="20200104 22:31:39.929"></status>
+</kw>
+<kw name="Log In" library="AutomationPractise_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=login</arg>
+</arguments>
+<msg timestamp="20200104 22:31:51.805" level="INFO">Clicking element 'class=login'.</msg>
+<status status="PASS" endtime="20200104 22:31:55.818" starttime="20200104 22:31:51.805"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:55.818" starttime="20200104 22:31:51.805"></status>
+</kw>
+<kw name="Input Create Email" library="AutomationPractise_resource">
+<arguments>
+<arg>${VALID EMAIL REGISTER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email_create</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200104 22:31:55.818" level="INFO">Typing text 'register3@wp.pl' into text field 'email_create'.</msg>
+<status status="PASS" endtime="20200104 22:31:59.146" starttime="20200104 22:31:55.818"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:31:59.146" starttime="20200104 22:31:55.818"></status>
+</kw>
+<kw name="Create Account" library="AutomationPractise_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="SubmitCreate"]</arg>
+</arguments>
+<msg timestamp="20200104 22:31:59.146" level="INFO">Clicking button 'xpath=//*[@id="SubmitCreate"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:04.375" starttime="20200104 22:31:59.146"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:04.375" starttime="20200104 22:31:59.146"></status>
+</kw>
+<kw name="Register Page Should Be Open" library="AutomationPractise_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login - My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:32:05.397" level="INFO">Page title is 'Login - My Store'.</msg>
+<status status="PASS" endtime="20200104 22:32:05.397" starttime="20200104 22:32:04.375"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:05.397" starttime="20200104 22:32:04.375"></status>
+</kw>
+<kw name="Choose Male Title" library="AutomationPractise_resource">
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>id_gender</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200104 22:32:05.399" level="INFO">Selecting '1' from radio button 'id_gender'.</msg>
+<status status="PASS" endtime="20200104 22:32:08.576" starttime="20200104 22:32:05.398"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:08.576" starttime="20200104 22:32:05.398"></status>
+</kw>
+<kw name="Input FirstName" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="customer_firstname"]</arg>
+<arg>Mich</arg>
+</arguments>
+<msg timestamp="20200104 22:32:08.576" level="INFO">Typing text 'Mich' into text field 'xpath=//*[@id="customer_firstname"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:11.885" starttime="20200104 22:32:08.576"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:11.885" starttime="20200104 22:32:08.576"></status>
+</kw>
+<kw name="Input LastName" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="customer_lastname"]</arg>
+<arg>Bor</arg>
+</arguments>
+<msg timestamp="20200104 22:32:11.885" level="INFO">Typing text 'Bor' into text field 'xpath=//*[@id="customer_lastname"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:15.194" starttime="20200104 22:32:11.885"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:15.194" starttime="20200104 22:32:11.885"></status>
+</kw>
+<kw name="Input RegisterPassword" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="passwd"]</arg>
+<arg>haslo12!</arg>
+</arguments>
+<msg timestamp="20200104 22:32:15.194" level="INFO">Typing text 'haslo12!' into text field 'xpath=//*[@id="passwd"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:18.562" starttime="20200104 22:32:15.194"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:18.562" starttime="20200104 22:32:15.194"></status>
+</kw>
+<kw name="Select Day" library="AutomationPractise_resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>xpath=//*[@id="days"]</arg>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20200104 22:32:18.562" level="INFO">Selecting options from selection list 'xpath=//*[@id="days"]' by value 15.</msg>
+<status status="PASS" endtime="20200104 22:32:26.002" starttime="20200104 22:32:18.562"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:26.002" starttime="20200104 22:32:18.562"></status>
+</kw>
+<kw name="Select Months" library="AutomationPractise_resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>xpath=//*[@id="months"]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200104 22:32:26.002" level="INFO">Selecting options from selection list 'xpath=//*[@id="months"]' by value 1.</msg>
+<status status="PASS" endtime="20200104 22:32:33.303" starttime="20200104 22:32:26.002"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:33.303" starttime="20200104 22:32:26.002"></status>
+</kw>
+<kw name="Select Yours" library="AutomationPractise_resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>xpath=//*[@id="years"]</arg>
+<arg>1983</arg>
+</arguments>
+<msg timestamp="20200104 22:32:33.303" level="INFO">Selecting options from selection list 'xpath=//*[@id="years"]' by value 1983.</msg>
+<status status="PASS" endtime="20200104 22:32:40.641" starttime="20200104 22:32:33.303"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:40.641" starttime="20200104 22:32:33.303"></status>
+</kw>
+<kw name="Input Address" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="address1"]</arg>
+<arg>Cwiartki</arg>
+</arguments>
+<msg timestamp="20200104 22:32:40.641" level="INFO">Typing text 'Cwiartki' into text field 'xpath=//*[@id="address1"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:43.995" starttime="20200104 22:32:40.641"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:43.995" starttime="20200104 22:32:40.641"></status>
+</kw>
+<kw name="Input City" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="city"]</arg>
+<arg>Gdansk</arg>
+</arguments>
+<msg timestamp="20200104 22:32:43.995" level="INFO">Typing text 'Gdansk' into text field 'xpath=//*[@id="city"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:47.338" starttime="20200104 22:32:43.995"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:47.338" starttime="20200104 22:32:43.995"></status>
+</kw>
+<kw name="Select State" library="AutomationPractise_resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>xpath=//*[@id="id_state"]</arg>
+<arg>6</arg>
+</arguments>
+<msg timestamp="20200104 22:32:47.338" level="INFO">Selecting options from selection list 'xpath=//*[@id="id_state"]' by value 6.</msg>
+<status status="PASS" endtime="20200104 22:32:54.646" starttime="20200104 22:32:47.338"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:54.646" starttime="20200104 22:32:47.338"></status>
+</kw>
+<kw name="Input PostCode" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="postcode"]</arg>
+<arg>12345</arg>
+</arguments>
+<msg timestamp="20200104 22:32:54.646" level="INFO">Typing text '12345' into text field 'xpath=//*[@id="postcode"]'.</msg>
+<status status="PASS" endtime="20200104 22:32:58.040" starttime="20200104 22:32:54.646"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:32:58.040" starttime="20200104 22:32:54.646"></status>
+</kw>
+<kw name="Input Phone" library="AutomationPractise_resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="phone_mobile"]</arg>
+<arg>111222333</arg>
+</arguments>
+<msg timestamp="20200104 22:32:58.040" level="INFO">Typing text '111222333' into text field 'xpath=//*[@id="phone_mobile"]'.</msg>
+<status status="PASS" endtime="20200104 22:33:01.411" starttime="20200104 22:32:58.040"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:01.411" starttime="20200104 22:32:58.040"></status>
+</kw>
+<kw name="Submit Account" library="AutomationPractise_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="submitAccount"]</arg>
+</arguments>
+<msg timestamp="20200104 22:33:01.411" level="INFO">Clicking button 'xpath=//*[@id="submitAccount"]'.</msg>
+<status status="PASS" endtime="20200104 22:33:08.257" starttime="20200104 22:33:01.411"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:08.257" starttime="20200104 22:33:01.411"></status>
+</kw>
+<kw name="My Account Page Should Be Open" library="AutomationPractise_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My account - My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:33:09.275" level="INFO">Page title is 'My account - My Store'.</msg>
+<status status="PASS" endtime="20200104 22:33:09.275" starttime="20200104 22:33:08.257"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:09.275" starttime="20200104 22:33:08.257"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:33:12.369" starttime="20200104 22:33:09.275"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:12.369" critical="yes" starttime="20200104 22:31:39.929"></status>
+</test>
+<test id="s1-t3" name="Valid Login">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20200104 22:33:12.369" starttime="20200104 22:33:12.369"></status>
+</kw>
+<kw name="Open Browser To Main Page" library="AutomationPractise_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${MAIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:33:12.384" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20200104 22:33:23.331" starttime="20200104 22:33:12.384"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:33:24.333" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20200104 22:33:24.333" starttime="20200104 22:33:23.331"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:24.333" starttime="20200104 22:33:12.384"></status>
+</kw>
+<kw name="Log In" library="AutomationPractise_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=login</arg>
+</arguments>
+<msg timestamp="20200104 22:33:24.333" level="INFO">Clicking element 'class=login'.</msg>
+<status status="PASS" endtime="20200104 22:33:28.463" starttime="20200104 22:33:24.333"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:28.463" starttime="20200104 22:33:24.333"></status>
+</kw>
+<kw name="Input Email" library="AutomationPractise_resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200104 22:33:28.463" level="INFO">Typing text 'validmail@wp.pl' into text field 'email'.</msg>
+<status status="PASS" endtime="20200104 22:33:31.791" starttime="20200104 22:33:28.463"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:31.791" starttime="20200104 22:33:28.463"></status>
+</kw>
+<kw name="Input Password" library="AutomationPractise_resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${passwd}</arg>
+</arguments>
+<msg timestamp="20200104 22:33:31.791" level="INFO">Typing text 'validpassword123' into text field 'passwd'.</msg>
+<status status="PASS" endtime="20200104 22:33:35.153" starttime="20200104 22:33:31.791"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:35.153" starttime="20200104 22:33:31.791"></status>
+</kw>
+<kw name="Submit Credentials" library="AutomationPractise_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20200104 22:33:35.153" level="INFO">Clicking button 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20200104 22:33:41.020" starttime="20200104 22:33:35.153"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:41.020" starttime="20200104 22:33:35.153"></status>
+</kw>
+<kw name="My Account Page Should Be Open" library="AutomationPractise_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My account - My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:33:42.038" level="INFO">Page title is 'My account - My Store'.</msg>
+<status status="PASS" endtime="20200104 22:33:42.038" starttime="20200104 22:33:41.020"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:42.038" starttime="20200104 22:33:41.020"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:33:45.131" starttime="20200104 22:33:42.038"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:45.131" critical="yes" starttime="20200104 22:33:12.369"></status>
+</test>
+<test id="s1-t4" name="Invalid Login">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20200104 22:33:45.147" starttime="20200104 22:33:45.147"></status>
+</kw>
+<kw name="Open Browser To Main Page" library="AutomationPractise_resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${MAIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200104 22:33:45.147" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20200104 22:33:55.929" starttime="20200104 22:33:45.147"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200104 22:33:56.933" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20200104 22:33:56.933" starttime="20200104 22:33:55.929"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:33:56.933" starttime="20200104 22:33:45.147"></status>
+</kw>
+<kw name="Log In" library="AutomationPractise_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=login</arg>
+</arguments>
+<msg timestamp="20200104 22:33:56.933" level="INFO">Clicking element 'class=login'.</msg>
+<status status="PASS" endtime="20200104 22:34:00.787" starttime="20200104 22:33:56.933"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:00.787" starttime="20200104 22:33:56.933"></status>
+</kw>
+<kw name="Input Email" library="AutomationPractise_resource">
+<arguments>
+<arg>${INVALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200104 22:34:00.787" level="INFO">Typing text 'invalidmail@wp.pl' into text field 'email'.</msg>
+<status status="PASS" endtime="20200104 22:34:04.149" starttime="20200104 22:34:00.787"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:04.149" starttime="20200104 22:34:00.787"></status>
+</kw>
+<kw name="Input Password" library="AutomationPractise_resource">
+<arguments>
+<arg>${INVALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${passwd}</arg>
+</arguments>
+<msg timestamp="20200104 22:34:04.149" level="INFO">Typing text 'invalidpassword123' into text field 'passwd'.</msg>
+<status status="PASS" endtime="20200104 22:34:07.452" starttime="20200104 22:34:04.149"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:07.452" starttime="20200104 22:34:04.149"></status>
+</kw>
+<kw name="Submit Credentials" library="AutomationPractise_resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20200104 22:34:07.452" level="INFO">Clicking button 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20200104 22:34:12.765" starttime="20200104 22:34:07.452"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:12.766" starttime="20200104 22:34:07.452"></status>
+</kw>
+<kw name="Alert Page Should Be Open" library="AutomationPractise_resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ALERT URL}</arg>
+</arguments>
+<msg timestamp="20200104 22:34:13.796" level="INFO">Current location is 'http://automationpractice.com/index.php?controller=authentication'.</msg>
+<status status="PASS" endtime="20200104 22:34:13.796" starttime="20200104 22:34:12.767"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:13.796" starttime="20200104 22:34:12.767"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200104 22:34:16.903" starttime="20200104 22:34:13.796"></status>
+</kw>
+<status status="PASS" endtime="20200104 22:34:16.903" critical="yes" starttime="20200104 22:33:45.131"></status>
+</test>
+<doc>Test web side automationpractice.com.</doc>
+<status status="PASS" endtime="20200104 22:34:16.918" starttime="20200104 22:31:26.880"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="AutomationPractise" pass="4">AutomationPractise</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

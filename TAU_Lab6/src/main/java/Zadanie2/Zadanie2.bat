@@ -1,0 +1,1 @@
+robot -d .\src\main\java\Zadanie2\zadanie2_results .\src\main\java\Zadanie2\Shape.robot
